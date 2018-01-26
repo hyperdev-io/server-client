@@ -40,4 +40,33 @@ module.exports = {
             isLocked
         }}
     `,
+    dataStoresQuery: gql`
+        {datastores {
+            id
+            name
+            percentage
+            total
+            used
+            createdAt
+        }}
+    `,
+    resourcesQuery: gql`
+        {resources {
+            id
+            name
+            lastCheck
+            isUp
+            description
+            details
+        }}
+    `,
+    appstoreAppsQuery: gql`
+        {appstoreApps {
+            name
+            version
+            image
+            dockerCompose
+            bigboatCompose
+        }}
+        `,
 }

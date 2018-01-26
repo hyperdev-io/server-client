@@ -1,17 +1,20 @@
-const fetch = require('node-fetch')
-const { ApolloClient } = require('apollo-client')
-const { HttpLink } = require('apollo-link-http')
-const { InMemoryCache } = require('apollo-cache-inmemory')
+const fetch = require("node-fetch");
+const { ApolloClient } = require("apollo-client");
+const { HttpLink } = require("apollo-link-http");
+const { InMemoryCache } = require("apollo-cache-inmemory");
 
-module.exports = (uri) => {
-    const apolloClient = new ApolloClient({
-        link: new HttpLink({ uri, fetch }),
-        cache: new InMemoryCache()
-    });
+module.exports = uri => {
+  const apolloClient = new ApolloClient({
+    link: new HttpLink({ uri, fetch }),
+    cache: new InMemoryCache()
+  });
 
-    return {
-        instances: require('./instances')(apolloClient),
-        apps: require('./apps')(apolloClient),
-        buckets: require('./buckets')(apolloClient),
-    }
-}
+  return {
+    instances: require("./instances")(apolloClient),
+    apps: require("./apps")(apolloClient),
+    buckets: require("./buckets")(apolloClient),
+    datastores: require("./datastores")(apolloClient),
+    resources: require("./resources")(apolloClient),
+    appstoreapps: require("./appstoreapps")(apolloClient),
+  };
+};

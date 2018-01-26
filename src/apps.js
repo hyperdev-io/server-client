@@ -7,7 +7,7 @@ module.exports = apolloClient => ({
       apolloClient
         .query({ query: appsQuery })
         .then(res => resolve(res.data.apps))
-        .catch(error => rject(error));
+        .catch(reject);
     }),
   createOrUpdate: (name, version, dockerCompose, bigboatCompose) =>
     new Promise((resolve, reject) => {
