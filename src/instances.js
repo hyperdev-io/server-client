@@ -1,5 +1,5 @@
-const { instancesQuery } = require('./queries')
-const { startInstance, stopInstance } = require('./mutations')
+const { instancesQuery, serviceLogsQuery } = require("./queries");
+const { startInstance, stopInstance } = require("./mutations");
 
 module.exports = apolloClient => ({
   list: () =>
@@ -7,6 +7,14 @@ module.exports = apolloClient => ({
       apolloClient
         .query({ query: instancesQuery })
         .then(res => resolve(res.data.instances))
+        .catch(reject);
+    }),
+  serviceLogs: (instanceName, serviceName) =>
+    new Promise((resolve, reject) => {
+      const variables = { instanceName, serviceName };
+      apolloClient
+        .query({ query: serviceLogsQuery, variables })
+        .then(res => resolve(res.data.instances[0].services[0].logs))
         .catch(reject);
     }),
   start: (name, appName, appVersion, parameters = {}, options = {}) =>

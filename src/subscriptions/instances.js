@@ -1,4 +1,4 @@
-const gql = require('graphql-tag');
+const gql = require("graphql-tag");
 const query = gql`
   subscription instances {
     instances {
@@ -19,9 +19,6 @@ const query = gql`
         ip
         state
         errors
-        logs {
-          n1000
-        }
         container {
           id
           name
@@ -36,6 +33,6 @@ const query = gql`
 
 module.exports = wsclient => callback => {
   wsclient.subscribe({ query, variables: {} }).subscribe({
-      next: data => callback(data.data.instances)
+    next: data => callback(data.data.instances)
   });
 };
