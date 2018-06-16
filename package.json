@@ -1,5 +1,5 @@
 {
-  "name": "@hyperdev/server-client",
+  "name": "@hyperdev-io/server-client",
   "version": "2.3.0",
   "description": "",
   "main": "lib/index.js",
