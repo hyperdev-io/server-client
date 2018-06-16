@@ -18,7 +18,7 @@ module.exports = {
       buckets: require("./buckets")(client),
       datastores: require("./datastores")(client),
       resources: require("./resources")(client),
-      appstoreapps: require("./appstoreapps")(client)
+      appstoreapps: require("./appstoreapps")(client),
     };
   },
   subscriptions: (uri, options = { reconnect: true }) => {
@@ -29,7 +29,8 @@ module.exports = {
     return {
       instances: require("./subscriptions/instances")(wsclient),
       apps: require("./subscriptions/apps")(wsclient),
-      buckets: require("./subscriptions/buckets")(wsclient)
+      buckets: require("./subscriptions/buckets")(wsclient),
+      resources: require("./subscriptions/resources")(wsclient),
     };
   }
 };
