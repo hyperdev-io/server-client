@@ -1,11 +1,11 @@
 {
-  "name": "@bigboat/server-client",
+  "name": "@hyperdev/server-client",
   "version": "2.3.0",
   "description": "",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bigboat-io/server-client.git"
+    "url": "https://github.com/hyperdev-io/server-client.git"
   },
   "scripts": {
     "dev": "nodemon src/index.js",
