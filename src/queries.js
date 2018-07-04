@@ -96,5 +96,14 @@ module.exports = {
         bigboatCompose
       }
     }
+  `,
+  currentUserQuery: gql`
+    {
+      currentUser {
+        name
+        email
+        picture
+      }
+    }
   `
 };
