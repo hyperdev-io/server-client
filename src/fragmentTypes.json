@@ -1,0 +1,188 @@
+{
+    "__schema": {
+        "types": [
+            {
+                "kind": "OBJECT",
+                "name": "Query",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "App",
+                "possibleTypes": null
+            },
+            {
+                "kind": "SCALAR",
+                "name": "ID",
+                "possibleTypes": null
+            },
+            {
+                "kind": "SCALAR",
+                "name": "String",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "Instance",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "AgentInfo",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "AppInfo",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "ServiceInfo",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "ContainerInfo",
+                "possibleTypes": null
+            },
+            {
+                "kind": "SCALAR",
+                "name": "Float",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "Bucket",
+                "possibleTypes": null
+            },
+            {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "possibleTypes": null
+            },
+            {
+                "kind": "INTERFACE",
+                "name": "Resource",
+                "possibleTypes": [
+                    {
+                        "name": "ComputeNode"
+                    },
+                    {
+                        "name": "StorageNode"
+                    }
+                ]
+            },
+            {
+                "kind": "OBJECT",
+                "name": "DataStore",
+                "possibleTypes": null
+            },
+            {
+                "kind": "SCALAR",
+                "name": "DateTime",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "AppstoreApp",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "User",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "Mutation",
+                "possibleTypes": null
+            },
+            {
+                "kind": "SCALAR",
+                "name": "Int",
+                "possibleTypes": null
+            },
+            {
+                "kind": "SCALAR",
+                "name": "JSON",
+                "possibleTypes": null
+            },
+            {
+                "kind": "INPUT_OBJECT",
+                "name": "Options",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "Subscription",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "__Schema",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "__Type",
+                "possibleTypes": null
+            },
+            {
+                "kind": "ENUM",
+                "name": "__TypeKind",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "__Field",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "__InputValue",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "__EnumValue",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "__Directive",
+                "possibleTypes": null
+            },
+            {
+                "kind": "ENUM",
+                "name": "__DirectiveLocation",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "CPU",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "Memory",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "Disk",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "ComputeNode",
+                "possibleTypes": null
+            },
+            {
+                "kind": "OBJECT",
+                "name": "StorageNode",
+                "possibleTypes": null
+            }
+        ]
+    }
+}

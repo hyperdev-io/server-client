@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "nodemon src/index.js",
-    "build": "npx babel src --out-dir lib --source-maps inline"
+    "build": "npx babel src --out-dir lib --source-maps inline && cp ./src/fragmentTypes.json ./lib"
   },
   "dependencies": {
     "apollo-cache-inmemory": "^1.1.5",

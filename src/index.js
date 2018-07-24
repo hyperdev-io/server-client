@@ -3,9 +3,18 @@ const { ApolloClient } = require("apollo-client");
 const { HttpLink } = require("apollo-link-http");
 const { setContext } = require('apollo-link-context');
 const { WebSocketLink } = require("apollo-link-ws");
-const { InMemoryCache } = require("apollo-cache-inmemory");
+const {
+  InMemoryCache,
+  IntrospectionFragmentMatcher
+} = require("apollo-cache-inmemory");
+const introspectionQueryResultData = require("./fragmentTypes.json");
 
-const cache = new InMemoryCache();
+// Refer to https://www.apollographql.com/docs/react/advanced/fragments.html#fragment-matcher
+// on how to obtain the fragmentTypes data 
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData
+});
+const cache = new InMemoryCache({ fragmentMatcher });
 
 const authLink = token => setContext((_, { headers }) => {
   return {
