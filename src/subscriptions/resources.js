@@ -33,6 +33,6 @@ const query = gql`
 
 module.exports = wsclient => callback => {
   wsclient.subscribe({ query, variables: {} }).subscribe({
-    next: data => { console.log(data); callback(data.data.resources)}
+    next: data => callback(data.data.resources)
   });
 };
