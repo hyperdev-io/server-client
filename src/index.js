@@ -3,6 +3,7 @@ const { ApolloClient } = require("apollo-client");
 const { HttpLink } = require("apollo-link-http");
 const { setContext } = require('apollo-link-context');
 const { WebSocketLink } = require("apollo-link-ws");
+const { onError } = require("apollo-link-error");
 const {
   InMemoryCache,
   IntrospectionFragmentMatcher
@@ -25,10 +26,18 @@ const authLink = token => setContext((_, { headers }) => {
   };
 });
 
+const errorLink = ({onUserError, onNetworkError}) => onError(error => {
+ if(error.networkError && onNetworkError){
+   onNetworkError(error.networkError);
+ } else if(error.graphQLErrors && onUserError) {
+   error.graphQLErrors.forEach(onUserError);
+ }
+});
+
 module.exports = {
-  client: (uri, token) => {
+  client: (uri, opts = {}) => {
     const client = new ApolloClient({
-      link: authLink(token).concat(new HttpLink({ uri, fetch })),
+      link: errorLink(opts).concat(authLink(opts.token).concat(new HttpLink({ uri, fetch }))),
       cache
     });
     return {
