@@ -47,7 +47,8 @@ module.exports = {
       datastores: require("./datastores")(client),
       resources: require("./resources")(client),
       appstoreapps: require("./appstoreapps")(client),
-      currentUser: require("./current-user")(client)
+      currentUser: require("./current-user")(client),
+      reset: () => client.resetStore(),
     };
   },
   subscriptions: (uri, token, options = { reconnect: true }, webSocketImpl) => {
@@ -60,7 +61,8 @@ module.exports = {
       instances: require("./subscriptions/instances")(wsclient),
       apps: require("./subscriptions/apps")(wsclient),
       buckets: require("./subscriptions/buckets")(wsclient),
-      resources: require("./subscriptions/resources")(wsclient)
+      resources: require("./subscriptions/resources")(wsclient),
+      reset: () => wsclient.resetStore(),
     };
   }
 };
