@@ -1,11 +1,11 @@
 {
-  "name": "@hyperdev-io/server-client",
+  "name": "@hyperdev-io/graphql-api-client",
   "version": "2.5.2",
-  "description": "",
+  "description": "A client for the HyperDev GraphQL API",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hyperdev-io/server-client.git"
+    "url": "https://github.com/hyperdev-io/graphql-api-client"
   },
   "scripts": {
     "dev": "nodemon src/index.js",
@@ -23,8 +23,8 @@
     "node-fetch": "^1.7.3",
     "subscriptions-transport-ws": "^0.9.12"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "HyperDev",
+  "license": "Apache 2.0",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
