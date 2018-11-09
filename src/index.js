@@ -53,8 +53,9 @@ module.exports = {
   },
   subscriptions: (uri, token, options = { reconnect: true }, webSocketImpl) => {
     options.connectionParams = { token }
+    const wsLink = new WebSocketLink({ uri, options, webSocketImpl });
     const wsclient = new ApolloClient({
-      link: new WebSocketLink({ uri, options, webSocketImpl }),
+      link: wsLink,
       cache,
     });
     return {
@@ -62,7 +63,11 @@ module.exports = {
       apps: require("./subscriptions/apps")(wsclient),
       buckets: require("./subscriptions/buckets")(wsclient),
       resources: require("./subscriptions/resources")(wsclient),
-      reset: () => wsclient.resetStore(),
+      reset: () => {
+        wsclient.resetStore();
+        wsLink.subscriptionClient.reconnect = false;
+        wsLink.subscriptionClient.client.close()
+      },
     };
   }
 };

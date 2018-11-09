@@ -1,6 +1,6 @@
 {
   "name": "@hyperdev-io/server-client",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "description": "",
   "main": "lib/index.js",
   "repository": {
