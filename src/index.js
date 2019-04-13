@@ -11,7 +11,7 @@ const {
 const introspectionQueryResultData = require("./fragmentTypes.json");
 
 // Refer to https://www.apollographql.com/docs/react/advanced/fragments.html#fragment-matcher
-// on how to obtain the fragmentTypes data 
+// on how to obtain the fragmentTypes data
 const fragmentMatcher = new IntrospectionFragmentMatcher({
   introspectionQueryResultData
 });
@@ -49,6 +49,7 @@ module.exports = {
       appstoreapps: require("./appstoreapps")(client),
       currentUser: require("./current-user")(client),
       reset: () => client.resetStore(),
+      apolloClient: client,
     };
   },
   subscriptions: (uri, token, options = { reconnect: true }, webSocketImpl) => {
@@ -68,6 +69,7 @@ module.exports = {
         wsLink.subscriptionClient.reconnect = false;
         wsLink.subscriptionClient.client.close()
       },
+      apolloClient: wsclient,
     };
   }
 };
