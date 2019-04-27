@@ -103,6 +103,7 @@ module.exports = {
         name
         email
         picture
+        roles
       }
     }
   `
