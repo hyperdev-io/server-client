@@ -9,7 +9,12 @@ const query = gql`
         version
       }
       storageBucket
-      startedBy
+      startedBy {
+        name
+        username
+        email
+        picture
+      }
       state
       desiredState
       status
