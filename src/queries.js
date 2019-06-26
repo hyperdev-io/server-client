@@ -64,6 +64,7 @@ module.exports = {
         id
         name
         isLocked
+        size
       }
     }
   `,
