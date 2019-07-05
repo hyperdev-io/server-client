@@ -23,6 +23,7 @@ module.exports = {
           version
         }
         storageBucket
+        stateful
         startedBy {
           name
           username

@@ -9,6 +9,7 @@ const query = gql`
         version
       }
       storageBucket
+      stateful
       startedBy {
         name
         username
