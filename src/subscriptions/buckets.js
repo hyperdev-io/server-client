@@ -5,6 +5,7 @@ const query = gql`
       id
       name
       isLocked
+      size
     }
   }
 `;
