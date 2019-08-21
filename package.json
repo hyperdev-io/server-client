@@ -1,6 +1,6 @@
 {
   "name": "@hyperdev-io/graphql-api-client",
-  "version": "2.5.7",
+  "version": "2.6.0",
   "description": "A client for the HyperDev GraphQL API",
   "main": "lib/index.js",
   "repository": {

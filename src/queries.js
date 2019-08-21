@@ -34,7 +34,10 @@ module.exports = {
         status
         services {
           name
-          fqdn
+          fqdn {
+            public
+            private
+          }
           ip
           state
           errors
